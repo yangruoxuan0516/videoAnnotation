@@ -1,19 +1,20 @@
 "use client";
 
-import { VideoUploader } from "@/components/video-uploader";
-import { VideoPlayer } from "@/components/video-player";
-import { VideoControls } from "@/components/video-controls";
-import { SegmentTable } from "@/components/segment-table";
-import { DraftSegments } from "@/components/draft-segments";
-import { JsonEditor } from "@/components/json-editor";
+import { VideoUploader } from "../components/video-uploader";
+import { VideoPlayer } from "../components/video-player";
+import { VideoControls } from "../components/video-controls";
+import { SegmentTable } from "../components/segment-table";
+import { DraftSegments } from "../components/draft-segments";
+import { JsonEditor } from "../components/json-editor";
 import { useState, useRef } from "react";
-import { Segment, DraftSegment } from "@/lib/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Segment, DraftSegment } from "../lib/types";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { Plus } from "lucide-react";
 
 export default function Home() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [videoFileName, setVideoFileName] = useState<string>("");
   const [segments, setSegments] = useState<Segment[]>([]);
   const [drafts, setDrafts] = useState<DraftSegment[]>([]);
   const [videoDuration, setVideoDuration] = useState<number>(0);
@@ -21,8 +22,9 @@ export default function Home() {
   const [playbackSpeed, setPlaybackSpeed] = useState(1.0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleVideoUpload = (url: string) => {
+  const handleVideoUpload = (url: string, fileName: string) => {
     setVideoUrl(url);
+    setVideoFileName(fileName);
     setSegments([]);
     setDrafts([]);
   };
@@ -192,7 +194,7 @@ export default function Home() {
                 <JsonEditor 
                   segments={segments}
                   setSegments={setSegments}
-                  videoName={videoUrl.split("/").pop() || ""}
+                  videoName={videoFileName}
                   videoDuration={videoDuration}
                 />
               </CardContent>

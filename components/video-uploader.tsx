@@ -1,11 +1,11 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "./ui/input";
+import { Card, CardContent } from "./ui/card";
 import { Upload } from "lucide-react";
 
 interface VideoUploaderProps {
-  onUpload: (url: string) => void;
+  onUpload: (url: string, fileName: string) => void;
 }
 
 export function VideoUploader({ onUpload }: VideoUploaderProps) {
@@ -13,7 +13,7 @@ export function VideoUploader({ onUpload }: VideoUploaderProps) {
     const file = event.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
-      onUpload(url);
+      onUpload(url, file.name);
     }
   };
 
