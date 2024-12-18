@@ -28,80 +28,86 @@ export function VideoControls({
   onSpeedChange,
 }: VideoControlsProps) {
   return (
-    <div className="flex flex-wrap gap-2 items-center">
+    <div className="flex flex-wrap gap-1.5 items-center justify-center">
       <Button 
         variant="outline" 
-        size="icon" 
         onClick={() => onSkip(-5)}
         title="Back 5 seconds"
+        className="w-28 px-2"
       >
-        <SkipBack className="h-4 w-4" />
+        <SkipBack className="h-4 w-4 mr-1.5" />
+        Back 5s
       </Button>
 
       <Button 
-        variant="outline" 
-        size="icon" 
+        variant="outline"
         onClick={() => onSkip(-1)}
         title="Back 1 second"
+        className="w-28 px-2"
       >
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="h-4 w-4 mr-1.5" />
+        Back 1s
       </Button>
 
       <Button 
-        variant="outline" 
-        size="icon" 
+        variant="outline"
         onClick={() => onFrame('prev')}
         title="Previous frame"
+        className="w-28 px-2"
       >
-        <StepBack className="h-4 w-4" />
+        <StepBack className="h-4 w-4 mr-1.5" />
+        Prev Frame
       </Button>
 
-      <Button onClick={onPlayPause} className="w-24">
+      <Button onClick={onPlayPause} className="w-24 px-2">
         {isPlaying ? (
           <>
-            <Pause className="h-4 w-4 mr-2" />
+            <Pause className="h-4 w-4 mr-1.5" />
             Pause
           </>
         ) : (
           <>
-            <Play className="h-4 w-4 mr-2" />
+            <Play className="h-4 w-4 mr-1.5" />
             Play
           </>
         )}
       </Button>
 
       <Button 
-        variant="outline" 
-        size="icon" 
+        variant="outline"
         onClick={() => onFrame('next')}
         title="Next frame"
+        className="w-28 px-2"
       >
-        <StepForward className="h-4 w-4" />
+        <StepForward className="h-4 w-4 mr-1.5" />
+        Next Frame
       </Button>
 
       <Button 
-        variant="outline" 
-        size="icon" 
+        variant="outline"
         onClick={() => onSkip(1)}
         title="Forward 1 second"
+        className="w-28 px-2"
       >
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight className="h-4 w-4 mr-1.5" />
+        Fwd 1s
       </Button>
 
       <Button 
-        variant="outline" 
-        size="icon" 
+        variant="outline"
         onClick={() => onSkip(5)}
         title="Forward 5 seconds"
+        className="w-28 px-2"
       >
-        <SkipForward className="h-4 w-4" />
+        <SkipForward className="h-4 w-4 mr-1.5" />
+        Fwd 5s
       </Button>
 
       <Select
         value={playbackSpeed.toString()}
         onValueChange={(value) => onSpeedChange(parseFloat(value))}
       >
-        <SelectTrigger className="w-[120px]">
+        <SelectTrigger className="w-[100px]">
           <SelectValue placeholder="Speed" />
         </SelectTrigger>
         <SelectContent>
