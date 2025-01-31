@@ -171,7 +171,7 @@ export default function Home() {
                 <CardTitle>Timestamps</CardTitle>
                 <Button onClick={addDraft}>
                   <Plus className="h-4 w-4 mr-2" />
-                  Add Draft
+                  Add
                 </Button>
               </CardHeader>
               <CardContent>
