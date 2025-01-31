@@ -114,7 +114,7 @@ export default function Home() {
 
   
 
-  const predefinedNotes = ["START",
+  const predefinedNotes = ["START","END",
                            "[Découvrir]",
                            "choose location", "choose location - use the current location", "choose location - search", "choose location - show the results", "choose location - close",
                            "select store", "select store - check the location", "select store - check ingredients", "select store - reserve", "select store - back",
