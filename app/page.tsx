@@ -116,8 +116,20 @@ export default function Home() {
 
   const predefinedNotes = ["START","END",
                            "[Découvrir]",
-                           "choose location", "choose location - use the current location", "choose location - search", "choose location - show the results", "choose location - close",
-                           "select store", "select store - check the location", "select store - check ingredients", "select store - reserve", "select store - back",
+                           "choose location - open", 
+                           "choose location - use the current location", 
+                           "choose location - search a location on the map",
+                           "choose location - choose a location from the list", 
+                           "choose location - search the entered location", 
+                           "choose location - show the results", 
+                           "choose location - close",
+
+                           "select store", 
+                           "select store - check the location", 
+                           "select store - check ingredients", 
+                           "select store - reserve", 
+                           "select store - back",
+                           
                            "[Parcourir]", 
                            "[Livraison]",
                            "[Favoris]",
