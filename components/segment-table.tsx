@@ -26,6 +26,7 @@ export function SegmentTable({ segments, onDelete, onSegmentClick }: SegmentTabl
         <TableHeader>
           <TableRow>
             <TableHead>Segment</TableHead>
+            <TableHead>After</TableHead>
             <TableHead>Start Time (s)</TableHead>
             <TableHead>End Time (s)</TableHead>
             <TableHead>Duration (s)</TableHead>
@@ -40,6 +41,7 @@ export function SegmentTable({ segments, onDelete, onSegmentClick }: SegmentTabl
               onClick={() => onSegmentClick(segment.start)}
             >
               <TableCell>{index + 1}</TableCell>
+              <TableHead>{segment.after}</TableHead>
               <TableCell>{segment.start.toFixed(2)}</TableCell>
               <TableCell>{segment.end.toFixed(2)}</TableCell>
               <TableCell>{(segment.end - segment.start).toFixed(2)}</TableCell>

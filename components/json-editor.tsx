@@ -24,10 +24,13 @@ export function JsonEditor({ segments, setSegments, videoName, videoDuration }: 
   useEffect(() => {
     const jsonData = {
       name: baseFileName,
-      time_stamps: segments.map(segment => [segment.start, segment.end])
+      time_stamps: segments.map(segment => ({
+        [segment.after || ""]: [segment.start, segment.end]  // Ensure a valid key
+      }))
     };
     setJsonContent(JSON.stringify(jsonData, null, 2));
   }, [segments, baseFileName]);
+  
 
   const handleJsonChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     try {

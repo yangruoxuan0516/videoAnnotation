@@ -1,4 +1,5 @@
 export interface Segment {
+  after?: string;
   start: number;
   end: number;
 }
