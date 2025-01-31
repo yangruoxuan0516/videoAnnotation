@@ -114,27 +114,28 @@ export default function Home() {
 
   
 
-  const predefinedNotes = ["START","END",
-                           "[Découvrir]",
-                           "choose location - open", 
-                           "choose location - use the current location", 
-                           "choose location - search a location on the map",
-                           "choose location - choose a location from the list", 
-                           "choose location - search the entered location", 
-                           "choose location - show the results", 
-                           "choose location - close",
+const predefinedNotes = ["START",
+  "[Discover]",
+  "choose location - open",
+  "choose location - use the current location",
+  "choose location - search a location on the map",
+  "choose location - choose a location from the list",
+  "choose location - search the entered location",
+  "choose location - show the results",
+  "choose location - close",
 
-                           "select store", 
-                           "select store - check the location", 
-                           "select store - check ingredients", 
-                           "select store - reserve", 
-                           "select store - back",
-                           
-                           "[Parcourir]", 
-                           "[Livraison]",
-                           "[Favoris]",
-                           "[Profil]",
-                           "others"];
+
+  "select store",
+  "select store - check the location",
+  "select store - check ingredients",
+  "select store - reserve",
+  "select store - back",
+ 
+  "[Browse]",
+  "[Delivery]",
+  "[Favourites]",
+  "[Profile]",
+  "others"];
 
   // New function to handle note changes
   const handleNoteChange = (index: number, note: string) => {
